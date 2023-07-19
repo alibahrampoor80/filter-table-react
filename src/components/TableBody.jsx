@@ -20,9 +20,11 @@ export default function TableBody({tableData, columns}) {
     }
 
 
-    const data1 = [...tableData].sort((a, b) => (a.name < b.name ? -1 : 1));
+    // const data1 = [...tableData].sort((a, b) => (a.name < b.name ? -1 : 1));
+    // data1.map((d) => console.log( d.name));
 
-    data1.map((d) => console.log( d.name));
+    // const data3 = [...tableData].sort((a, b) => a.name.localeCompare(b.name));
+    // data3.map((d) => console.log( d.name));
 
     return <>
 

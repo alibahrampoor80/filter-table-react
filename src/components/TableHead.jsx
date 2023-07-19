@@ -7,8 +7,6 @@ export default function TableHead({columns, handleSorting}) {
     const [sortField, setSortField] = useState("");
 
     const handleSortingChange = (accessor) => {
-        console.log(order);
-
         const sortOrder =
             accessor === sortField && order === "asc" ? "desc" : "asc";
         setSortField(accessor);
@@ -20,12 +18,14 @@ export default function TableHead({columns, handleSorting}) {
         <thead className={'w-full bg-green-100 text-green-500 font-bold p-2'}>
         <tr>
             {columns.map(({label, accessor}) => {
-                return <th key={accessor} className={'p-2 '}
-                >
+                return <th key={accessor} className={'p-2 '}>
                     {label}
-                    <button className={''} onClick={() => handleSortingChange(accessor)}>
-                        <ChevronDownIcon className={'w-4 h-4'}/>
-                    </button>
+                    {
+                        accessor === 'name' ? <button className={''} onClick={() => handleSortingChange(accessor)}>
+                            <ChevronDownIcon className={'w-4 h-4'}/>
+                        </button> : ""
+                    }
+
                 </th>
             })}
         </tr>
