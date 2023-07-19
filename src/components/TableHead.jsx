@@ -21,9 +21,9 @@ export default function TableHead({columns, handleSorting}) {
         <tr>
             {columns.map(({label, accessor}) => {
                 return <th key={accessor} className={'p-2 '}
-                           onClick={() => handleSortingChange(accessor)}>
+                >
                     {label}
-                    <button className={''}>
+                    <button className={''} onClick={() => handleSortingChange(accessor)}>
                         <ChevronDownIcon className={'w-4 h-4'}/>
                     </button>
                 </th>
