@@ -20,11 +20,14 @@ export default function TableHead({columns, handleSorting}) {
             {columns.map(({label, accessor}) => {
                 return <th key={accessor} className={'p-2 '}>
                     {label}
+
                     {
-                        accessor === 'name' ? <button className={''} onClick={() => handleSortingChange(accessor)}>
-                            <ChevronDownIcon className={'w-4 h-4'}/>
-                        </button> : ""
+                        accessor === 'operation' ? "" :
+                            <button className={''} onClick={() => handleSortingChange(accessor)}>
+                                <ChevronDownIcon className={'w-4 h-4'}/>
+                            </button>
                     }
+
 
                 </th>
             })}

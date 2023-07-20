@@ -9,13 +9,18 @@ export const Table = () => {
     const columns = [
         {label: "نام ", accessor: "name"},
         {label: "ظرفیت", accessor: "capacity"},
-        {label: "ظرفیت باقی مانده", accessor: "remaining_capacity"},
+        {label: "ظرفیت باقی مانده", accessor: "remainingCapacity"},
         {label: "نوع", accessor: "type"},
-        {label: "شهر", accessor: "city"},
-        {label: "تاریخ رفت", accessor: "departure_date"},
-        {label: "تاریخ برگشت", accessor: "return_date"},
+        {label: "شهر", accessor: "destination"},
+        {label: "هتل", accessor: "hotel"},
+        {label: "تاریخ رفت", accessor: "departureDate"},
+        {label: "تاریخ برگشت", accessor: "returnDate"},
         {label: "عملیات", accessor: "operation"},
     ];
+
+
+
+
 
     const handleSorting = (sortField, sortOrder) => {
         // console.log(sortField, sortOrder)

@@ -33,15 +33,22 @@ export default function TableBody({tableData, columns}) {
             tableData.map((item, index) => {
                 return (
                     <tr key={index} className={'border-green-400 border w-full'}>
+
+                        {/*{columns.map(({ accessor }) => {*/}
+                        {/*    const tData = item[accessor] ? item[accessor] : "——";*/}
+                        {/*    return <td key={accessor}>{tData}</td>;*/}
+                        {/*})}*/}
+
+
                         <td className={'p-2'}>{item.name}</td>
                         <td className={'p-2'}>{item.capacity}</td>
                         <td className={'p-2'}>{item.remainingCapacity}</td>
                         <td className={'p-2'}>{getTypeTrip(item.type)}</td>
                         <td className={'p-2'}>{item.destination}</td>
+                        <td className={'p-2'}>{item.hotel}</td>
                         <td className={'p-2'}>{ToLocalDateString(item.returnDate)}</td>
                         <td className={'p-2'}>{ToLocalDateString(item.departureDate)}</td>
                         <td className={'p-2 flex gap-x-2 justify-center'}>
-
                             <button onClick={() => handelEditTrip(item.id)}
                                     className={'bg-green-500 hover:bg-green-600 transition-all duration-300 p-2 rounded-xl text-white'}>
                                 <PencilSquareIcon className={'w-6 h-6'}/>
@@ -50,8 +57,8 @@ export default function TableBody({tableData, columns}) {
                                     className={'bg-green-500 hover:bg-green-600 transition-all duration-300 p-2 rounded-xl text-white'}>
                                 ثبت نام ها
                             </button>
-
                         </td>
+
                     </tr>
                 )
             })
