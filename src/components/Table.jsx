@@ -1,10 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {data} from "../data.js";
 import TableHead from "./TableHead.jsx";
 import TableBody from "./TableBody.jsx";
 
 export const Table = () => {
-    const [tableData, setTableData] = useState(data);
+    const [tableData, setTableData] = useState([]);
+    const [search, setSearch] = useState('')
+
 
     const columns = [
         {label: "نام ", accessor: "name"},
@@ -17,9 +19,6 @@ export const Table = () => {
         {label: "تاریخ برگشت", accessor: "returnDate"},
         {label: "عملیات", accessor: "operation"},
     ];
-
-
-
 
 
     const handleSorting = (sortField, sortOrder) => {
@@ -42,11 +41,37 @@ export const Table = () => {
 
     }
 
+    useEffect(() => {
+        const list = {
+            nodes: data.filter((item) => item.name.includes(search)),
+        };
+        setTableData(list.nodes)
+        // console.log(list)
+
+    }, [search])
+
+    const handelSearchValue = (event) => {
+        setSearch(event.target.value)
+    }
+
     return <>
+
+        <div className={'w-72'}>
+            <label htmlFor="search"
+                   className={'block mb-2 text-sm font-medium text-gray-900 dark:text-white'}>جستجو</label>
+            <input type="text"
+                   className={'textField__input'}
+                   onChange={(event) =>
+                       handelSearchValue(event)}/>
+        </div>
 
         <table className={'table w-full border shadow-xl my-4'}>
             <TableHead {...{columns, handleSorting}}/>
-            <TableBody {...{columns, tableData}} />
+            <TableBody
+                {...{columns, tableData}}
+                // tableData={tableData}
+                // columns={columns}
+            />
         </table>
 
 

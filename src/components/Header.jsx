@@ -13,11 +13,12 @@ export default function Header() {
                             خانه
                         </Link>
                     </li>
-                    <li>
-                        <Link to={'/list'}>
-                            جدول
-                        </Link>
-                    </li>
+
+                    {/*<li>*/}
+                    {/*    <Link to={'/list'}>*/}
+                    {/*        جدول*/}
+                    {/*    </Link>*/}
+                    {/*</li>*/}
 
                 </ul>
             </nav>

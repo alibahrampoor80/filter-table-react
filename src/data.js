@@ -37,5 +37,17 @@ export const data = [
         "capacity": 43,
         "disabled": false,
         "remainingCapacity": 16
+    }, {
+        "id": 4,
+        "type": "journey",
+        "name": "اصفهان گردی",
+        "origin": "کاشان",
+        "destination": "اصفهان",
+        "departureDate": "2023-10-23T00:00:00.000Z",
+        "returnDate": "2023-05-24T00:00:00.000Z",
+        "hotel": "هتل نصف جهان",
+        "capacity": 50,
+        "disabled": false,
+        "remainingCapacity": 12
     },
 ]

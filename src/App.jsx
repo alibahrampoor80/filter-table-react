@@ -5,6 +5,8 @@ import Layout from "./components/Layout.jsx";
 
 import {Table} from "./components/Table.jsx";
 
+import {data} from "./data.js";
+
 function App() {
 
 
@@ -12,7 +14,9 @@ function App() {
     return <>
         <Layout>
 
-            <Table/>
+
+
+            <Table />
 
         </Layout>
 

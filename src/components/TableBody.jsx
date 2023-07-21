@@ -30,15 +30,17 @@ export default function TableBody({tableData, columns}) {
 
         <tbody className={'text-center'}>
         {
+
+
             tableData.map((item, index) => {
                 return (
+
                     <tr key={index} className={'border-green-400 border w-full'}>
 
                         {/*{columns.map(({ accessor }) => {*/}
                         {/*    const tData = item[accessor] ? item[accessor] : "——";*/}
                         {/*    return <td key={accessor}>{tData}</td>;*/}
                         {/*})}*/}
-
 
                         <td className={'p-2'}>{item.name}</td>
                         <td className={'p-2'}>{item.capacity}</td>
@@ -62,7 +64,9 @@ export default function TableBody({tableData, columns}) {
                     </tr>
                 )
             })
+
         }
+
 
         </tbody>
     </>
